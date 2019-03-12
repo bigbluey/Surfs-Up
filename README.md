@@ -15,13 +15,13 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
 #### Precipitation Analysis
 
 * Design a Query to Retrieve the Last 12 Months of Precipitation Data Selecting Only the `date` and `prcp` Values
-* Save the Query Results as a Pandas DataFrame, Set the Index to the Date Column and Sort the Dataframe Values by `date`
+* Save the Query Results as a Pandas DataFrame and Set the Index to the Date Column & Sort the Dataframe Values by `date`
 * Use Pandas Plotting with Matplotlib to `plot` the Data
 * Use Pandas to Calculate the Summary Statistics for the Precipitation Data
 
 #### Station Analysis
 
-* Design a Query to Find the Most Active Stations
+* Design a Query to Show How Many Stations are Available in the Dataset
     * List the Stations and Counts in Descending Order
     * Which Station Had the Highest Number of Observations?
 * Using the Station ID from the Previous Query, Calculate the Lowest Temperature Recorded, Highest Temperature Recorded, and Average Temperature of the Most Active Station
@@ -37,21 +37,6 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
     * Use the Average Temperature for the y Value
     * Use the Peak-to-Peak (max-min) Value as the y Error Bar (yerr)
 
-#### Rainfall Analysis
-
-* Calculate the Rainfall per Weather Station Using the Previous Year's Matching Dates
-    * Sort in Descending Order by Precipitation Amount and List the Station (Name, Latitude, Longitude and Elevation)
-* Create a Query That Will Calculate the Daily Normals (i.e. Averages for min, max, and avg for All Historic Data Matching a Specific Month and Day)
-* Calculate the Daily Normals
-    * Push Each Tuple of Calculations Into a List Called `normals`
-    * Set the Start and End Date of the Trip
-    * Use the Start and End Date to Create a Range of Dates
-    * Strip Off the Year and Save a List of %m-%d Strings
-    * Loop Through the List of %m-%d Strings and Calculate the Normals for Each Date
-* Load the Previous Query Results (List of Daily Normals) Into a Pandas DataFrame and Add the `trip_dates` Range as the `date` Index
-* Use Pandas to Plot the Daily Normals as an Area Plot With `stacked=False`
-
-
 
 ### Step 2 - Climate App
 
@@ -60,7 +45,7 @@ Design a Flask API based on the queries that have been developed.
 
 #### Routes
 * `/api/v1.0/precipitation`
-  * Convert the query results to a Dictionary using `date` as the key and `prcp` as the value
+  * Convert the Query Results to a Dictionary Using `date` as the Key and `prcp` as the Value
   * Return the JSON representation of the dictionary
 
 * `/api/v1.0/stations`
@@ -74,4 +59,3 @@ Design a Flask API based on the queries that have been developed.
   * Return a JSON list of the minimum temperature, the average temperature and the max temperature for a given start or start-end range
   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive
-
