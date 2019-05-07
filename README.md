@@ -56,22 +56,22 @@ Design a Flask API based on the queries that have been developed.
   * Convert the Query Results to a Dictionary Using `date` as the Key and `prcp` as the Value
   * Return the JSON representation of the dictionary
 
-![](Images/precipitation_api.png
+![](Images/precipitation_api.png)
 
 * `/api/v1.0/stations`
   * Return a JSON list of stations from the dataset
 
-![](Images/stations_api.png
+![](Images/stations_api.png)
 
 * `/api/v1.0/tobs`
   * Query for the dates and temperature observations from a year from the last data point
   * Return a JSON list of Temperature Observations (tobs) for the previous year
 
-![](Images/tobs_api.png
+![](Images/tobs_api.png)
 
 * `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
   * Return a JSON list of the minimum temperature, the average temperature and the max temperature for a given start or start-end range
   * When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date
   * When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive
 
-![](Images/start_end_day_api.png
+![](Images/start_end_day_api.png)
